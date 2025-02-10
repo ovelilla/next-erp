@@ -1,8 +1,8 @@
 const constants = {
-  FIELD_FILTER_PROPS: {
+  FIELD_INPUT_PROPS: {
     placeholder: "Filtrar...",
     type: "text",
   },
-};
+} as const;
 
 export default constants;

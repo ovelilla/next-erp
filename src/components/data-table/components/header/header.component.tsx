@@ -1,21 +1,21 @@
 // Components
-import { AddRecord } from "./components/add-record/add-record.component";
-import { Filter } from "./components/filter/filter.component";
-import { Visibility } from "./components/visibility/visibility.component";
+import { CreateRecord } from "./components/create-record/create-record.component";
+import { GlobalFilter } from "./components/global-filter/global-filter.component";
+import { ColumnsVisibility } from "./components/columns-visibility/columns-visibility.component";
 // Types
 import type { HeaderProps } from "./types/header.component.types";
 
 function Header<TData>({
   globalFilter,
-  onCreate,
+  onCreateRecord,
   setGlobalFilter,
   table,
 }: HeaderProps<TData>) {
   return (
     <div className="flex items-center gap-4">
-      <Filter {...{ globalFilter, setGlobalFilter }} />
-      <AddRecord {...{ onCreate }} />
-      <Visibility {...{ table }} />
+      <GlobalFilter {...{ globalFilter, setGlobalFilter }} />
+      <CreateRecord {...{ onCreateRecord }} />
+      <ColumnsVisibility {...{ table }} />
     </div>
   );
 }

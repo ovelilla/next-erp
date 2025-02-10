@@ -1,15 +1,9 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { ColumnDef, Table, VisibilityState } from "@tanstack/react-table";
-
-type HeaderHookProps<TData, TValue> = {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-  initialColumnVisibility: VisibilityState;
-};
+import type { Table } from "@tanstack/react-table";
 
 type HeaderProps<TData> = {
   globalFilter: string;
-  onCreate: () => void;
+  onCreateRecord: () => void;
   setGlobalFilter: Dispatch<SetStateAction<string>>;
   table: Table<TData>;
 };

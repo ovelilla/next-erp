@@ -11,9 +11,9 @@ import type { DataTableProps } from "./types/data-table.component.types";
 const DataTable = <TData, TValue>({
   columns,
   data,
-  onCreate,
   initialColumnVisibility,
   multipleSelectActions,
+  onCreateRecord,
 }: DataTableProps<TData, TValue>) => {
   const { globalFilter, setGlobalFilter, table } = DataTableHook({
     columns,
@@ -26,7 +26,7 @@ const DataTable = <TData, TValue>({
       <Header
         {...{
           globalFilter,
-          onCreate,
+          onCreateRecord,
           setGlobalFilter,
           table,
         }}

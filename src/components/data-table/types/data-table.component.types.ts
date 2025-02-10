@@ -9,7 +9,7 @@ type DataTableProps<TData, TValue> = {
     icon: React.JSX.Element;
     onClick: (selectedRows: TData[]) => void;
   }[];
-  onCreate: () => void;
+  onCreateRecord: () => void;
 };
 
 export type { DataTableProps };

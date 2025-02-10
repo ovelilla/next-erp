@@ -7,26 +7,28 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 // Constants
-import constants from "./constants/add-record.constants";
+import constants from "./constants/create-record.constants";
 // Icons
 import { Plus } from "lucide-react";
+// Types
+import type { CreateRecordProps } from "./types/create-record.component.types";
 
-export const AddRecord = ({ onCreate }) => (
+const CreateRecord = ({ onCreateRecord }: CreateRecordProps) => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
-          variant="ghost"
-          size="icon"
-          onClick={onCreate}
-          aria-label="Añadir registro"
+          {...{
+            ...constants.BUTTON_PROPS,
+            onClick: onCreateRecord,
+          }}
         >
           <Plus className="h-4 w-4" />
         </Button>
       </TooltipTrigger>
-      <TooltipContent>
-        <p>Añadir registro</p>
-      </TooltipContent>
+      <TooltipContent>{constants.TOOLTIP_PROPS.label}</TooltipContent>
     </Tooltip>
   </TooltipProvider>
 );
+
+export { CreateRecord };

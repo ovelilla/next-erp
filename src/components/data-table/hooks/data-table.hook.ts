@@ -6,6 +6,7 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  RowSelectionState,
   SortingState,
   useReactTable,
   VisibilityState,
@@ -24,7 +25,7 @@ const DataTableHook = <TData, TValue>({
     initialColumnVisibility,
   );
   const [globalFilter, setGlobalFilter] = useState<string>("");
-  const [rowSelection, setRowSelection] = useState({});
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const table = useReactTable({

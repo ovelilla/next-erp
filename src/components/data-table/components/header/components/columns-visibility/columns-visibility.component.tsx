@@ -9,21 +9,25 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 // Constants
-import constants from "./constants/visibility.constants";
+import constants from "./constants/columns-visibility.constants";
 // Icons
 import { SlidersHorizontal } from "lucide-react";
+// Types
+import type { ColumnsVisibilityProps } from "./types/columns-visibility.component.types";
 
-export const Visibility = ({ table }) => {
+function ColumnsVisibility<TData>({ table }: ColumnsVisibilityProps<TData>) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <span className="sr-only">{constants.SR_BUTTON_LABEL}</span>
+      <DropdownMenuTrigger {...constants.DROPDOWN_PROPS.TRIGGER_PROPS}>
+        <Button {...constants.DROPDOWN_PROPS.BUTTON_PROPS}>
           <SlidersHorizontal className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[150px]">
-        <DropdownMenuLabel>{constants.DROPDOWN_LABEL}</DropdownMenuLabel>
+      <DropdownMenuContent
+        {...constants.DROPDOWN_PROPS.CONTENT_PROPS}
+        className="w-[150px]"
+      >
+        <DropdownMenuLabel>{constants.DROPDOWN_PROPS.LABEL}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {table
           .getAllColumns()
@@ -44,4 +48,6 @@ export const Visibility = ({ table }) => {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-};
+}
+
+export { ColumnsVisibility };
