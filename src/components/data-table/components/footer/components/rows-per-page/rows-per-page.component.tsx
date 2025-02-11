@@ -8,19 +8,18 @@ import {
 } from "@/components/ui/select";
 // Constants
 import constants from "./constants/rows-per-page.constants";
+// Hooks
+import { RowsPerPageHook } from "./hooks/rows-per-page.hook";
+// Types
+import type { RowsPerPageProps } from "./types/rows-per-page.component.types";
 
-export const RowsPerPage = ({ table }) => {
-  const pageSize = table.getState().pagination.pageSize;
+function RowsPerPage<TData>({ table }: RowsPerPageProps<TData>) {
+  const { handleValueChange, pageSize } = RowsPerPageHook({ table });
 
   return (
     <div className="flex items-center space-x-2">
-      <p className="hidden sm:flex text-sm font-medium">{constants.LABEL}</p>
-      <Select
-        value={pageSize}
-        onValueChange={(value) => {
-          table.setPageSize(Number(value));
-        }}
-      >
+      <p className="hidden text-sm font-medium sm:flex">{constants.LABEL}</p>
+      <Select value={pageSize} onValueChange={handleValueChange}>
         <SelectTrigger className="h-8 w-[70px]">
           <SelectValue placeholder={pageSize} />
         </SelectTrigger>
@@ -34,4 +33,6 @@ export const RowsPerPage = ({ table }) => {
       </Select>
     </div>
   );
-};
+}
+
+export { RowsPerPage };

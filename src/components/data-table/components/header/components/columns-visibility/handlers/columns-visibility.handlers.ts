@@ -5,23 +5,20 @@ import type {
 } from "./types/columns-visibility.handlers.types";
 
 const checkedChangeHandler = <TData>({
-  checked,
+  value,
   column,
 }: CheckedChangeHandlerProps<TData>): void => {
-  column.toggleVisibility(!!checked);
+  column.toggleVisibility(!!value);
 };
 
 const ColumnsVisibilityHandlers = <
   TData,
 >(): ColumnsVisibilityHandlersReturn<TData> => {
   return {
-    handleCheckedChange: ({
-      checked,
-      column,
-    }: CheckedChangeHandlerProps<TData>) =>
+    handleCheckedChange: ({ column, value }) =>
       checkedChangeHandler({
-        checked,
         column,
+        value,
       }),
   };
 };

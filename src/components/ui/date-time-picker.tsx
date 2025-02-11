@@ -146,7 +146,7 @@ const DateTimePicker = ({ disabled, onSelect, value }: DateTimePickerProps) => {
         <DateTimePickerTrigger value={value} disabled={disabled} />
       </PopoverTrigger>
 
-      <PopoverContent className="z-[999] w-auto p-0" align="start">
+      <PopoverContent className="z-999 w-auto p-0" align="start">
         <div className="sm:flex">
           <Calendar
             mode="single"

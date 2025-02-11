@@ -5,12 +5,15 @@ const constants = {
     },
     BUTTON_PROPS: {
       size: "icon",
-      variant: "outline",
+      variant: "ghost",
     },
     CONTENT_PROPS: {
       align: "end",
     },
     LABEL: "Columnas",
+  },
+  TOOLTIP_PROPS: {
+    CONTENT: "Visibilidad de columnas",
   },
 } as const;
 

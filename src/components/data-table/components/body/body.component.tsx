@@ -9,26 +9,26 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+// Types
+import { BodyProps } from "./types/body.component.types";
 
-export const Body = ({ columns, table }) => {
+function Body<TData, TValue>({ columns, table }: BodyProps<TData, TValue>) {
   return (
     <div className="flex grow rounded-md border">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                );
-              })}
+              {headerGroup.headers.map((header) => (
+                <TableHead key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                </TableHead>
+              ))}
             </TableRow>
           ))}
         </TableHeader>
@@ -44,7 +44,7 @@ export const Body = ({ columns, table }) => {
                     <span className="line-clamp-2">
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </span>
                   </TableCell>
@@ -62,4 +62,6 @@ export const Body = ({ columns, table }) => {
       </Table>
     </div>
   );
-};
+}
+
+export { Body };

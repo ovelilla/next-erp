@@ -1,7 +1,9 @@
 // Constants
 import constants from "./constants/selected-rows.constants";
+// Types
+import type { SelectedRowsProps } from "./types/selected-rows.component.types";
 
-export const SelectedRows = ({ table }) => {
+function SelectedRows<TData>({ table }: SelectedRowsProps<TData>) {
   const selectedRows = table.getFilteredSelectedRowModel().rows.length;
   const label =
     selectedRows === 1 ? constants.LABEL_SINGULAR : constants.LABEL_PLURAL;
@@ -11,10 +13,12 @@ export const SelectedRows = ({ table }) => {
   }
 
   return (
-    <div className="flex-1 text-sm text-muted-foreground">
+    <div className="text-muted-foreground flex-1 text-sm">
       <span>
         {selectedRows} {label}
       </span>
     </div>
   );
-};
+}
+
+export { SelectedRows };

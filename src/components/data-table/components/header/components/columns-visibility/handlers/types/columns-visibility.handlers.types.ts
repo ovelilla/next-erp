@@ -2,14 +2,14 @@
 import type { Column } from "@tanstack/react-table";
 
 type CheckedChangeHandlerProps<TData> = {
-  checked: boolean;
   column: Column<TData>;
+  value: boolean;
 };
 
 type ColumnsVisibilityHandlersReturn<TData> = {
   handleCheckedChange: ({
-    checked,
     column,
+    value,
   }: CheckedChangeHandlerProps<TData>) => void;
 };
 

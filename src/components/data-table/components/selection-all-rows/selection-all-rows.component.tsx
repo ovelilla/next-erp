@@ -1,7 +1,9 @@
 // Components
 import { Checkbox } from "@/components/ui/checkbox";
+// Types
+import type { SelectionAllRowsProps } from "./types/selection-all-rows.component.types";
 
-export const SelectionAllRows = ({ table }) => {
+function SelectionAllRows<TData>({ table }: SelectionAllRowsProps<TData>) {
   return (
     <Checkbox
       checked={
@@ -12,14 +14,6 @@ export const SelectionAllRows = ({ table }) => {
       aria-label="Seleccionar todas las filas"
     />
   );
-};
+}
 
-export const SelectionRow = ({ row }) => {
-  return (
-    <Checkbox
-      checked={row.getIsSelected()}
-      onCheckedChange={(value) => row.toggleSelected(!!value)}
-      aria-label="Seleccionar fila"
-    />
-  );
-};
+export { SelectionAllRows };

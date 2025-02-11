@@ -8,11 +8,16 @@ import { ColumnsVisibilityHandlers } from "../handlers/columns-visibility.handle
 
 const ColumnsVisibilityHook = <TData>({
   table,
-}: ColumnsVisibilityHookProps<TData>): ColumnsVisibilityHookReturn => {
-  const { handleCheckeChange } = ColumnsVisibilityHandlers();
+}: ColumnsVisibilityHookProps<TData>): ColumnsVisibilityHookReturn<TData> => {
+  const hideableColumns = table
+    .getAllColumns()
+    .filter((column) => column.getCanHide());
+
+  const { handleCheckedChange } = ColumnsVisibilityHandlers<TData>();
 
   return {
-    handleCheckeChange,
+    handleCheckedChange,
+    hideableColumns,
   };
 };
 

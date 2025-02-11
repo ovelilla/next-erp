@@ -9,11 +9,11 @@ import { DashboardProps } from "@/app/(protected)/layouts/dashboard/types/dashbo
 
 const DashboardLayout = ({ children }: DashboardProps) => {
   return (
-    <div className="flex flex-1">
+    <div className="flex w-full flex-1">
       <Sidebar />
 
-      <div className="flex flex-1 flex-col">
-        <header className="flex h-16 items-center justify-end border-b bg-background px-4">
+      <div className="flex w-full flex-1 flex-col">
+        <header className="bg-background flex h-16 items-center justify-end border-b px-4">
           <div className="flex gap-2">
             <SidebarTrigger />
             <ToggleTheme />
@@ -21,7 +21,7 @@ const DashboardLayout = ({ children }: DashboardProps) => {
           </div>
         </header>
 
-        <main className="flex flex-1 bg-background">{children}</main>
+        <main className="bg-background flex flex-1">{children}</main>
       </div>
     </div>
   );
