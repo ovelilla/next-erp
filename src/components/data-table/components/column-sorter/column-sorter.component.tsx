@@ -12,9 +12,13 @@ import { ArrowDown, ArrowUp, ChevronsUpDown, EyeOff } from "lucide-react";
 // Libs
 import { cn } from "@/lib/utils";
 // Types
-import type { SortingProps } from "./types/sorting.component.types";
+import type { ColumnSorterProps } from "./types/column-sorter.component.types";
 
-function Sorting<TData>({ className, column, label }: SortingProps<TData>) {
+function ColumnSorter<TData>({
+  className,
+  column,
+  label,
+}: ColumnSorterProps<TData>) {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{label}</div>;
   }
@@ -58,4 +62,4 @@ function Sorting<TData>({ className, column, label }: SortingProps<TData>) {
   );
 }
 
-export default Sorting;
+export { ColumnSorter };

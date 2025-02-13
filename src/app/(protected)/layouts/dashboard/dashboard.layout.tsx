@@ -13,7 +13,7 @@ const DashboardLayout = ({ children }: DashboardProps) => {
       <Sidebar />
 
       <div className="flex w-full flex-1 flex-col">
-        <header className="bg-background flex h-16 items-center justify-end border-b px-4">
+        <header className="bg-background flex h-16 shrink-0 items-center justify-end border-b px-4">
           <div className="flex gap-2">
             <SidebarTrigger />
             <ToggleTheme />
@@ -21,7 +21,9 @@ const DashboardLayout = ({ children }: DashboardProps) => {
           </div>
         </header>
 
-        <main className="bg-background flex flex-1">{children}</main>
+        <main className="bg-background flex flex-1 overflow-hidden">
+          <div className="flex w-full overflow-auto">{children}</div>
+        </main>
       </div>
     </div>
   );

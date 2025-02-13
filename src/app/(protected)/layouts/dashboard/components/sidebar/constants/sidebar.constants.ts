@@ -7,6 +7,8 @@ import {
   Command,
   GalleryVerticalEnd,
   Home,
+  Image,
+  Palette,
   Settings2,
   SquareTerminal,
 } from "lucide-react";
@@ -39,6 +41,16 @@ const ITEMS = {
       title: "Home",
       url: "/",
       icon: Home,
+    },
+    {
+      title: "Artistas",
+      url: "/artistas",
+      icon: Palette,
+    },
+    {
+      title: "Obras",
+      url: "/obras",
+      icon: Image,
     },
     {
       title: "Playground",

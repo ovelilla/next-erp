@@ -19,7 +19,7 @@ function MultipleSelectActions<TData>({
 
   return (
     <div className="flex items-center gap-4 lg:gap-6">
-      {multipleSelectActions.map(({ label, icon, onClick }) => (
+      {multipleSelectActions.map(({ label, icon: Icon, onClick }) => (
         <Button
           key={label}
           {...{
@@ -27,7 +27,7 @@ function MultipleSelectActions<TData>({
             onClick: () => onClick(selectedRows),
           }}
         >
-          {icon}
+          {<Icon className="h-4 w-4" />}
         </Button>
       ))}
     </div>

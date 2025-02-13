@@ -1,8 +1,8 @@
 // Vendors
 import type { Table } from "@tanstack/react-table";
 
-type SelectionAllRowsProps<TData> = {
+type SelectAllCheckboxProps<TData> = {
   table: Table<TData>;
 };
 
-export type { SelectionAllRowsProps };
+export type { SelectAllCheckboxProps };

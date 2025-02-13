@@ -8,13 +8,13 @@ import DataTableHook from "./hooks/data-table.hook";
 // Types
 import type { DataTableProps } from "./types/data-table.component.types";
 
-const DataTable = <TData, TValue>({
+function DataTable<TData>({
   columns,
   data,
   initialColumnVisibility,
   multipleSelectActions,
   onCreateRecord,
-}: DataTableProps<TData, TValue>) => {
+}: DataTableProps<TData>) {
   const { globalFilter, setGlobalFilter, table } = DataTableHook({
     columns,
     initialColumnVisibility,
@@ -22,7 +22,7 @@ const DataTable = <TData, TValue>({
   });
 
   return (
-    <div className="flex w-full flex-1 flex-col gap-4">
+    <div className="flex h-fit grow flex-col gap-4">
       <Header
         {...{
           globalFilter,
@@ -35,6 +35,6 @@ const DataTable = <TData, TValue>({
       <Footer {...{ multipleSelectActions, table }} />
     </div>
   );
-};
+}
 
 export { DataTable };

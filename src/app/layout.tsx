@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
 // Auth
 import { auth } from "@/auth";
+// Components
+import { Toaster } from "@/components/ui/sonner";
 // Fonts
 import { Inter } from "next/font/google";
 // Providers
@@ -39,6 +41,7 @@ async function RootLayout({
           >
             <TooltipProvider>{children}</TooltipProvider>
           </ThemeProvider>
+          <Toaster />
         </body>
       </html>
     </SessionProvider>

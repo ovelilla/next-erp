@@ -1,9 +1,9 @@
 // Components
 import { Checkbox } from "@/components/ui/checkbox";
 // Types
-import type { SelectionAllRowsProps } from "./types/selection-all-rows.component.types";
+import type { SelectAllCheckboxProps } from "./types/select-all-checkbox.component.types";
 
-function SelectionAllRows<TData>({ table }: SelectionAllRowsProps<TData>) {
+function SelectAllCheckbox<TData>({ table }: SelectAllCheckboxProps<TData>) {
   return (
     <Checkbox
       checked={
@@ -16,4 +16,4 @@ function SelectionAllRows<TData>({ table }: SelectionAllRowsProps<TData>) {
   );
 }
 
-export { SelectionAllRows };
+export { SelectAllCheckbox };

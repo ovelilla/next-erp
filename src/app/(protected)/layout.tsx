@@ -4,6 +4,8 @@ import { cookies } from "next/headers";
 import { DashboardLayout } from "@/app/(protected)/layouts/dashboard/dashboard.layout";
 // Providers
 import { SidebarProvider } from "@/components/ui/sidebar";
+// Styles
+import "./layout.css";
 
 async function ProtectedLayout({
   children,

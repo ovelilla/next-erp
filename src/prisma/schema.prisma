@@ -96,3 +96,10 @@ model TwoFactorConfirmation {
 
   @@unique([userId])
 }
+
+model Artist {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
